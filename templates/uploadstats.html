@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+    Upload Stats
+{% endblock %}
+
+{% block main %}
+    <div class="row-fluid">
+    <div class="row-fluid sortable">
+                <div class="box span12">
+                    <div class="box-header" data-original-title>
+                        <h2><i class="halflings-icon white edit"></i><span class="break"></span>Upload Companies Data</h2>
+                        <div class="box-icon">
+                            <a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+                        </div>
+                    </div>
+                    <div class="box-content">
+                        <form class="form-horizontal" method="POST" enctype='multipart/form-data'>
+                          {%csrf_token%}
+                          <fieldset>
+                            <div class="control-group">
+                              <label class="control-label" for="fileInput">File</label>
+                              <div class="controls">
+                                <input class="input-file uniform_on" id="fileInput" name="file" type="file">
+                              </div>
+                            </div>
+                            <div class="form-actions">
+                              <button type="submit" class="btn btn-primary">Save changes</button>
+                              <button type="reset" class="btn">Cancel</button>
+                            </div>
+                          </fieldset>
+                        </form>   
+
+                    </div>
+                </div><!--/span-->
+
+            </div><!--/row-->
+    </div>
+{% endblock %}
